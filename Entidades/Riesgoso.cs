@@ -10,7 +10,10 @@ namespace Entidades
     {
         public decimal? DeudaTotal { get; set; }
         public override decimal ObtenerTasaInteresSugerida()
-        {            
+        {
+            if (DeudaTotal > 100000)
+                return 60;
+
             return 30;
         }
     }
